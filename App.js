@@ -3,7 +3,6 @@ import {
   StyleSheet,
   Text,
   View,
-  ScrollView,
   FlatList,
   TextInput,
   Button,
@@ -42,9 +41,9 @@ export default function App() {
         />
       </View>
       <FlatList
-        keyExtractor={(item, index) => item.id}
+        keyExtractor={item => item.id}
         data={courseGoals}
-        renderItem = {itemData => (
+        renderItem={itemData => (
           <View style={styles.listItem}>
             <Text>
               {itemData.item.value}
@@ -54,28 +53,28 @@ export default function App() {
       />
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   screen: {
     padding: 50,
   },
   inputContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
   input: {
     width: '80%',
-    borderColor: "black",
+    borderColor: 'black',
     borderWidth: 1,
     padding: 10,
   },
   listItem: {
     padding: 10,
     marginVertical: 10,
-    backgroundColor: "#ccc",
-    borderColor: "black",
+    backgroundColor: '#ccc',
+    borderColor: 'black',
     borderWidth: 1,
   },
 });
