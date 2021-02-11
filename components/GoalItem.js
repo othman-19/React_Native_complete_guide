@@ -3,17 +3,17 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableNativeFeedback,
+  TouchableOpacity,
 } from 'react-native';
 
-const GoalItem = ({ title, onDelete }) => (
-  <TouchableNativeFeedback onPress={() => onDelete()}>
+const GoalItem = ({ id, title, onDelete }) => (
+  <TouchableOpacity activeOpacity={0.8} onPress={() => onDelete(id)}>
     <View style={styles.listItem}>
       <Text>
         {title}
       </Text>
     </View>
-  </TouchableNativeFeedback>
+  </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
