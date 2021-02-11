@@ -31,15 +31,21 @@ const GoalInput = ({ onAddGoal, visible, onCancel }) => {
           onChangeText={goalInputHandler}
           value={entredGoal}
         />
-        <Button
-          title="ADD"
-          onPress={addGoalHandler}
-        />
-        <Button
-          color="red"
-          title="CANCEl"
-          onPress={cancelGoalHandler}
-        />
+        <View style={styles.buttonContainer}>
+          <View style={styles.button}>
+            <Button
+              color="red"
+              title="CANCEl"
+              onPress={cancelGoalHandler}
+            />
+          </View>
+          <View style={styles.button}>
+            <Button
+              title="ADD"
+              onPress={addGoalHandler}
+            />
+          </View>
+        </View>
       </View>
     </Modal>
   );
@@ -57,6 +63,14 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 10,
     marginBottom: 10,
+  },
+  buttonContainer: {
+    width: '50%',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  button: {
+    width: '40%',
   },
 });
 
