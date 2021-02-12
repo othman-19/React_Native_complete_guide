@@ -14,6 +14,9 @@ export default function App() {
   const [isAddMode, setIsAddMode] = useState(false);
 
   const onAddGoal = entredGoal => {
+    if (entredGoal.length === 0) {
+      return;
+    }
     setCourseGoals(currentGoals => [
       ...currentGoals,
       {
